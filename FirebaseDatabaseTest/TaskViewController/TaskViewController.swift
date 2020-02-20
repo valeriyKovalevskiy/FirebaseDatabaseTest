@@ -13,10 +13,17 @@ class TaskViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var user: CurrentUser!
+    var ref: DatabaseReference!
+    var tasks = [Task]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        guard let currentUser = Auth.auth().currentUser else { return }
+        
+        user = CurrentUser(user: currentUser) // c помощью инициализатора получаем в структуру currentuser uid залогиненого юзера
+        ref = Database.database().reference(withPath: "users").child(String(user.uid)).child("tasks")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,9 +36,14 @@ class TaskViewController: UIViewController {
     @IBAction func didTappedAddBarButton(_ sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: "new task", message: "add new task", preferredStyle: .alert)
         alertController.addTextField()
-        let save = UIAlertAction(title: "save", style: .default) { _ in
+        let save = UIAlertAction(title: "save", style: .default) { [weak self] _ in
             guard let textField = alertController.textFields?.first, textField.text != "" else { return }
             
+            let task = Task(title: textField.text!, userId: (self?.user.uid)!)
+            let taskRef = self?.ref.child(task.title.lowercased()) // cоздаем конкретную задачу
+//            taskRef?.setValue(["title": task.title, "userId": task.userId, "completed": task.completed]) //помещаем словарь по ссылке , так же его можно переместить в структуру task
+            
+            taskRef?.setValue(task.convertToDictionary())
             //let task
             //task reference
             //

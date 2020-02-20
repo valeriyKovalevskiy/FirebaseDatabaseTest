@@ -18,7 +18,7 @@
 		7833CC5523FF105A00F54C7A /* TaskViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7833CC5423FF105A00F54C7A /* TaskViewController.storyboard */; };
 		7833CC5723FF108800F54C7A /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7833CC5623FF108800F54C7A /* TaskViewController.swift */; };
 		7833CC5B23FF2B0D00F54C7A /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7833CC5A23FF2B0D00F54C7A /* Task.swift */; };
-		7833CC5D23FF2B1100F54C7A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7833CC5C23FF2B1100F54C7A /* User.swift */; };
+		7833CC5D23FF2B1100F54C7A /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7833CC5C23FF2B1100F54C7A /* CurrentUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +36,7 @@
 		7833CC5423FF105A00F54C7A /* TaskViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskViewController.storyboard; sourceTree = "<group>"; };
 		7833CC5623FF108800F54C7A /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		7833CC5A23FF2B0D00F54C7A /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		7833CC5C23FF2B1100F54C7A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7833CC5C23FF2B1100F54C7A /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		BA6C12DBD54C2F2A9A78F1D8 /* Pods_FirebaseDatabaseTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseDatabaseTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -116,7 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				7833CC5A23FF2B0D00F54C7A /* Task.swift */,
-				7833CC5C23FF2B1100F54C7A /* User.swift */,
+				7833CC5C23FF2B1100F54C7A /* CurrentUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -249,7 +249,7 @@
 			files = (
 				7833CC4323FEFAE000F54C7A /* LoginViewController.swift in Sources */,
 				7833CC3F23FEFAE000F54C7A /* AppDelegate.swift in Sources */,
-				7833CC5D23FF2B1100F54C7A /* User.swift in Sources */,
+				7833CC5D23FF2B1100F54C7A /* CurrentUser.swift in Sources */,
 				7833CC5B23FF2B0D00F54C7A /* Task.swift in Sources */,
 				7833CC4123FEFAE000F54C7A /* SceneDelegate.swift in Sources */,
 				7833CC5723FF108800F54C7A /* TaskViewController.swift in Sources */,
