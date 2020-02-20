@@ -30,8 +30,23 @@ class TaskViewController: UIViewController {
         super.viewWillAppear(animated)
         
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        ref.observe(.value, with: { [weak self] (snapshot) in // получаемая информация
+          
+            var _tasks = [Task]()
+            for item in snapshot.children {
+                let task = Task(snapshot: item as! DataSnapshot)
+                _tasks.append(task)
+            }
+            self?.tasks = _tasks
+            self?.tableView.reloadData()
+        })
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        ref.removeAllObservers()
+    }
     
     @IBAction func didTappedAddBarButton(_ sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: "new task", message: "add new task", preferredStyle: .alert)
@@ -73,14 +88,16 @@ extension TaskViewController: UITableViewDelegate {}
 
 extension TaskViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return tasks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text = "cell # \(indexPath.row)"
+        let taskTitle = tasks[indexPath.row].title
+        cell.textLabel?.text = taskTitle
         cell.textLabel?.textColor = .white
+
         return cell
     }
     

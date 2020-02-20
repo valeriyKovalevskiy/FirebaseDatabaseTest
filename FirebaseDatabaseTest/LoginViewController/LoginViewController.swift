@@ -92,10 +92,11 @@ class LoginViewController: UIViewController {
                 return
             }
             if user != nil {
-                let storyboard = UIStoryboard(name: "TaskViewController", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "TaskViewController") as! TaskViewController
-                self?.navigationController!.pushViewController(vc, animated: true)
-                return
+//                let storyboard = UIStoryboard(name: "TaskViewController", bundle: nil)
+//                let vc = storyboard.instantiateViewController(withIdentifier: "TaskViewController") as! TaskViewController
+//                self?.navigationController!.pushViewController(vc, animated: true)
+//                return
+                print("logged in")
             }
             
             self?.displayWarningLabel(with: "no user")
