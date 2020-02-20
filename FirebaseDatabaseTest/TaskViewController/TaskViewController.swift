@@ -94,13 +94,39 @@ extension TaskViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        let taskTitle = tasks[indexPath.row].title
-        cell.textLabel?.text = taskTitle
+        let task = tasks[indexPath.row]
+        cell.textLabel?.text = task.title
         cell.textLabel?.textColor = .white
-
+        
+        toggleCompletion(cell, isCompleted: task.completed)
         return cell
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+     //СВЕРХУ И СНИЗУ ДВА МЕТОДА ДЛЯ РЕДАКТМРОВАНИЯ ЯЧЕЕК ТАБЛИЦЫ
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let task = tasks[indexPath.row]
+            task.ref?.removeValue() // УДАЛЯЕМ ТАСК ИЗ ФАЕРБЕЙС
+        }
+    }
+    
+    //ВЫПОЛНЯЕМ КОД ПРИ НАЖАТИИ НА НУЖНУЮ ЯЧЕЙКУ
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) else { return }
+        
+        let task = tasks[indexPath.row]
+        let isCompleted = !task.completed
+        
+        toggleCompletion(cell, isCompleted: isCompleted)
+        task.ref?.updateChildValues(["completed": isCompleted]) //МЕНЯЕМ ЗНАЧЕНИЕ В ФАЕРБЕЙС
+    }
+    
+    func toggleCompletion(_ cell: UITableViewCell, isCompleted: Bool) {
+        cell.accessoryType = isCompleted ? .checkmark : .none
+    }
 }
 
