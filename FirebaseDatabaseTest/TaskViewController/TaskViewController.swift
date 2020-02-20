@@ -27,7 +27,20 @@ class TaskViewController: UIViewController {
     
     
     @IBAction func didTappedAddBarButton(_ sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: "new task", message: "add new task", preferredStyle: .alert)
+        alertController.addTextField()
+        let save = UIAlertAction(title: "save", style: .default) { _ in
+            guard let textField = alertController.textFields?.first, textField.text != "" else { return }
+            
+            //let task
+            //task reference
+            //
+        }
+        let cancel = UIAlertAction(title: "cancel", style: .default, handler: nil)
+        alertController.addAction(save)
+        alertController.addAction(cancel)
         
+        present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func didTappedSignOutBarButton(_ sender: UIBarButtonItem) {

@@ -17,6 +17,8 @@
 		7833CC5323FEFC7D00F54C7A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7833CC5223FEFC7D00F54C7A /* GoogleService-Info.plist */; };
 		7833CC5523FF105A00F54C7A /* TaskViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7833CC5423FF105A00F54C7A /* TaskViewController.storyboard */; };
 		7833CC5723FF108800F54C7A /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7833CC5623FF108800F54C7A /* TaskViewController.swift */; };
+		7833CC5B23FF2B0D00F54C7A /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7833CC5A23FF2B0D00F54C7A /* Task.swift */; };
+		7833CC5D23FF2B1100F54C7A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7833CC5C23FF2B1100F54C7A /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		7833CC5223FEFC7D00F54C7A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7833CC5423FF105A00F54C7A /* TaskViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskViewController.storyboard; sourceTree = "<group>"; };
 		7833CC5623FF108800F54C7A /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		7833CC5A23FF2B0D00F54C7A /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		7833CC5C23FF2B1100F54C7A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BA6C12DBD54C2F2A9A78F1D8 /* Pods_FirebaseDatabaseTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseDatabaseTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -77,6 +81,7 @@
 		7833CC3D23FEFAE000F54C7A /* FirebaseDatabaseTest */ = {
 			isa = PBXGroup;
 			children = (
+				7833CC5E23FF2B1B00F54C7A /* Model */,
 				7833CC3E23FEFAE000F54C7A /* AppDelegate.swift */,
 				7833CC4023FEFAE000F54C7A /* SceneDelegate.swift */,
 				7833CC5923FF12B800F54C7A /* LoginViewController */,
@@ -105,6 +110,15 @@
 				7833CC4423FEFAE000F54C7A /* Main.storyboard */,
 			);
 			path = LoginViewController;
+			sourceTree = "<group>";
+		};
+		7833CC5E23FF2B1B00F54C7A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7833CC5A23FF2B0D00F54C7A /* Task.swift */,
+				7833CC5C23FF2B1100F54C7A /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		CA178B1DAE26B13EFD57BB9A /* Pods */ = {
@@ -235,6 +249,8 @@
 			files = (
 				7833CC4323FEFAE000F54C7A /* LoginViewController.swift in Sources */,
 				7833CC3F23FEFAE000F54C7A /* AppDelegate.swift in Sources */,
+				7833CC5D23FF2B1100F54C7A /* User.swift in Sources */,
+				7833CC5B23FF2B0D00F54C7A /* Task.swift in Sources */,
 				7833CC4123FEFAE000F54C7A /* SceneDelegate.swift in Sources */,
 				7833CC5723FF108800F54C7A /* TaskViewController.swift in Sources */,
 			);
